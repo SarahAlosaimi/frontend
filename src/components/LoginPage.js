@@ -99,12 +99,12 @@ export default function Login() {
     )
       .then((res) => {
         console.log("@")
-
+       
         if (res.data.message === "success") {
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
-          localStorage.setItem('userID', res.data.userID); // Store the user ID in localStorage
+          localStorage.setItem('userid',  JSON.stringify(res.data.userid)); // Store the user ID in localStorage
 console.log( "pid " + res.data.pID)
-          if (res.data.pID == "") {
+          if ( JSON.stringify (res.data.pID) == "") {
             setisEnrolled(null);
           }
           if (isEnrolled == null) {
