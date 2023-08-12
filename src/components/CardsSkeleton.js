@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 
+// Define a functional component named CardsSkeleton for cards loading
 const CardsSkeleton = () => {
     return (
         <>

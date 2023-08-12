@@ -43,7 +43,7 @@ export default function Header(props) {
 
 
     return (
-        <nav className="navbar navbar-light bg-light">
+        <nav className="navbar navbar-light bg-light shadow-sm">
             <img src={thiqahLogo} alt="logo" style={style.logo} l />
            { props.db }
            

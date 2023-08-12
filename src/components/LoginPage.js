@@ -9,11 +9,15 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import thiqahLogo from '../assets/thiqahLogo.png';
 
+
+// Define the Login functional component
 export default function Login() {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isEnrolled, setisEnrolled] = useState('false');
 
+
+  // Define a style object for conditional button styling
   const style = {
     regButton:
     {
@@ -25,22 +29,25 @@ export default function Login() {
     }
   }
 
-  const naviagate = useNavigate();
-  //Log in form data 
+  const naviagate = useNavigate(); // Define the navigate function for routing
+
+  // Define the form data state using useState
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     noUser: ''
   });
-  // Log in Form data 
+
+
   const [errors, setErrors] = useState({}); // Initialize errors state as an empty object
 
-// function to handle when the user change the input
+  // Function to handle when the user changes the input
   const handleOnChange = (event) => {
     const { name, value } = event.target;
     let newErrors = { ...errors }; // Create a copy of the errors object
 
-newErrors.noUser = "";
+    newErrors.noUser = "";
     if (name === 'email') {
       if (!value) {
         newErrors.email = 'Email is Required';
@@ -64,16 +71,21 @@ newErrors.noUser = "";
     setFormData({ ...formData, [event.target.name]: event.target.value }); // change input values to the current values
   };
 
-// function to handle when the user submits the inputs
+
+
+  // Function to handle when the user submits the inputs
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
     let newErrors = { ...errors }; // Create a copy of the errors object
-    var errorStatus = false; 
+    var errorStatus = false;
+
+    // Check for validation errors and update errorStatus
+
     if (!formData.email) {
       newErrors.email = 'Email is Required';
 
-      errorStatus = true ; 
+      errorStatus = true;
     }
     else {
       delete newErrors.email;
@@ -82,40 +94,34 @@ newErrors.noUser = "";
 
     if (!formData.password) {
       newErrors.password = 'Password is Required';
-      errorStatus = true ;
+      errorStatus = true;
     }
     else {
       delete newErrors.password;
     }
 
-  
-console.log(errorStatus);
-    if (errorStatus)
-    setErrors(newErrors); // Update the errors state with the newErrors object
-
-  
-
     //Check for validation errors before proceeding
     if (errorStatus) {
-      console.log("in");
-      return; 
+      setErrors(newErrors); // Update the errors state with the newErrors object
+      return;
     }
 
 
+    // Make a POST request to the login 
     axios.post('https://graduate-program-c0d91ea2bf20.herokuapp.com/login', { ...formData },
       {
       }
     )
       .then((res) => {
-        console.log("@")
-       
+
+
         if (res.data.message === "success") {
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
-          localStorage.setItem('userid',  JSON.stringify(res.data.userid)); // Store the user ID in localStorage
-console.log( "pid " + res.data.pID)
-console.log( "pid " + typeof(res.data.pID));
+          localStorage.setItem('userid', JSON.stringify(res.data.userid)); // Store the user ID in localStorage
+          console.log("pid " + res.data.pID)
+          console.log("pid " + typeof (res.data.pID));
 
-          if ((res.data.pID ===  null )) {
+          if ((res.data.pID === null)) {
             setisEnrolled(0);
           }
           if (isEnrolled == 0) {
@@ -127,9 +133,9 @@ console.log( "pid " + typeof(res.data.pID));
 
 
         } else {
-        newErrors.noUser = "The Email or password is incorrect";
-        console.log("1")
-        setErrors(newErrors); // Update state here
+          newErrors.noUser = "The Email or password is incorrect";
+          console.log("1")
+          setErrors(newErrors);
 
 
         }
