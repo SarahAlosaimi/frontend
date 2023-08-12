@@ -13,6 +13,7 @@ export default function Header()
 
     const handleLogout = () => {
         localStorage.removeItem('loggedIn');
+        localStorage.removeItem('pID');
         setIsLoggedIn(false);
         navigate('/login'); // Redirect to login page
       }

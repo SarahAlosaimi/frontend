@@ -98,8 +98,8 @@ export default function Login() {
         console.log("@")
         if (res.data.message === "success") {
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
-
-          if (res.data.pID == null) {
+console.log( "pid " + res.data.pID)
+          if (res.data.pID == "") {
             setisEnrolled(null);
           }
           if (isEnrolled == null) {
