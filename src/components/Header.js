@@ -45,19 +45,21 @@ export default function Header(props) {
     return (
         <nav className="navbar navbar-light bg-light">
             <img src={thiqahLogo} alt="logo" style={style.logo} l />
+           { props.db }
+           
             {props.db ? (
-    <Button
-      className="Logout"
-      style={style.logout}
-      onClick={handleLogout}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      Log out
-    </Button>
-  ) : (
-    <></>
-  )}
+                <Button
+                    className="Logout"
+                    style={style.logout}
+                    onClick={handleLogout}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    Log out
+                </Button>
+            ) : (
+                <></>
+            )}
 
         </nav>
     );
