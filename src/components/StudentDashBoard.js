@@ -39,7 +39,7 @@ export default function Profile() {
           }
           else{
           const imageFilename = response.data.profile_picture;
-          const imageUrl2 = `https://graduate-program-c0d91ea2bf20.herokuapp.com${imageFilename.substring(7)}`;
+          const imageUrl2 = `https://graduate-program-c0d91ea2bf20.herokuapp.com/${imageFilename.substring(7)}`;
           setImage(imageUrl2);
           }
       
