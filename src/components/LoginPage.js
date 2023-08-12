@@ -102,6 +102,7 @@ export default function Login() {
 
         if (res.data.message === "success") {
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
+          localStorage.setItem('userID', res.data.userID); // Store the user ID in localStorage
 console.log( "pid " + res.data.pID)
           if (res.data.pID == "") {
             setisEnrolled(null);
