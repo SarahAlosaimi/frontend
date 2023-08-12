@@ -44,6 +44,7 @@ newErrors.noUser = "";
     if (name === 'email') {
       if (!value) {
         newErrors.email = 'Email is Required';
+        delete newErrors.noUser;
       } else {
         delete newErrors.email;
       }
@@ -52,6 +53,7 @@ newErrors.noUser = "";
     if (name === 'password') {
       if (!value) {
         newErrors.password = 'Password is Required';
+        delete newErrors.noUser;
       } else {
         delete newErrors.password;
       }
@@ -65,17 +67,17 @@ newErrors.noUser = "";
 // function to handle when the user submits the inputs
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    setErrors({});
+
     let newErrors = { ...errors }; // Create a copy of the errors object
     var errorStatus = false; 
     if (!formData.email) {
       newErrors.email = 'Email is Required';
-      newErrors.noUser ="" ;
+
       errorStatus = true ; 
     }
     if (!formData.password) {
       newErrors.password = 'Password is Required';
-      newErrors.noUser ="" ;
+
       errorStatus = true ;
     };
 
