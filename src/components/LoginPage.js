@@ -65,6 +65,7 @@ export default function Login() {
 // function to handle when the user submits the inputs
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    setErrors({});
     let newErrors = { ...errors }; // Create a copy of the errors object
     var errorStatus = false; 
     if (!formData.email) {
@@ -98,6 +99,7 @@ export default function Login() {
     )
       .then((res) => {
         console.log("@")
+
         if (res.data.message === "success") {
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
 console.log( "pid " + res.data.pID)
@@ -146,7 +148,7 @@ console.log( "pid " + res.data.pID)
 
               <Row className='mt-3'>
                 <Col>
-                  <Form.Label>Email <span className='text-danger'>*</span></Form.Label>
+                  <Form.Label>Email : <span className='text-danger'>*</span></Form.Label>
                   <Form.Control type="email" placeholder="example@example.com" name="email" value={formData.email} onChange={handleOnChange} />
                   {errors.email ? <div className="text-danger"> {errors.email} </div> : null}
 
