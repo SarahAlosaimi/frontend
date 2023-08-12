@@ -106,7 +106,7 @@ newErrors.noUser = "";
 console.log( "pid " + res.data.pID)
 console.log( "pid " + typeof(res.data.pID));
 
-          if ((res.data.pID ===  0 )) {
+          if ((res.data.pID ===  null )) {
             setisEnrolled(0);
           }
           if (isEnrolled == 0) {

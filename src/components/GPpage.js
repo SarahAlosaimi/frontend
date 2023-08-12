@@ -65,7 +65,7 @@ const GPpage = () => {
 
   return (
     <>       
-<Header/>
+<Header db ={false} />
     <div className='container gpProgramsMain'>
 
       <div className='mt-4 align-items-center main px-4 pt-1'>

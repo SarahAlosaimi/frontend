@@ -52,7 +52,7 @@ export default function Profile() {
 
   return (
     <>
-<Header/>
+<Header db = {true} />
 
 <div className="container rounded bg-white mt-5 mb-5"  id="body">
     <Row>
