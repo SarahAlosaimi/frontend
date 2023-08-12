@@ -42,7 +42,7 @@ logo :
 
 
     return (
-        <nav class="navbar navbar-light bg-light">
+        <nav className="navbar navbar-light bg-light">
         <img src={thiqahLogo}  alt="logo" style={style.logo}l />
         <Button className="Logout" style = {style.logout}  onClick={handleLogout}   onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)} >Log out</Button>
