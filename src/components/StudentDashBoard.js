@@ -25,7 +25,7 @@ export default function Profile() {
     } else {
       console.log(userId)
       // Fetch student information from the server
-      axios.get(`https://graduate-program-c0d91ea2bf20.herokuapp.com?userId=${userId}`) 
+      axios.get(`https://graduate-program-c0d91ea2bf20.herokuapp.com/getStudentInfo?userId=${userId}`) 
         .then(response => {
 
           setStudentInfo(response.data); // Set the fetched student information to state
