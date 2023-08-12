@@ -166,7 +166,7 @@ export default function Login() {
 
               <Row className='mt-3'>
                 <Col>
-                  <Form.Label>Email : <span className='text-danger'>*</span></Form.Label>
+                  <Form.Label>Email  <span className='text-danger'>*</span></Form.Label>
                   <Form.Control type="email" placeholder="example@example.com" name="email" value={formData.email} onChange={handleOnChange} />
                   {errors.email ? <div className="text-danger"> {errors.email} </div> : null}
 
