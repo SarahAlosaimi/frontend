@@ -75,21 +75,28 @@ newErrors.noUser = "";
 
       errorStatus = true ; 
     }
+    else {
+      delete newErrors.email;
+    }
+
+
     if (!formData.password) {
       newErrors.password = 'Password is Required';
-
       errorStatus = true ;
-    };
+    }
+    else {
+      delete newErrors.password;
+    }
 
-
-
-    if (errorStatus )
+  
+console.log(errorStatus);
+    if (errorStatus)
     setErrors(newErrors); // Update the errors state with the newErrors object
 
   
 
     //Check for validation errors before proceeding
-    if (Object.keys(errors).length > 0 || errorStatus) {
+    if (errorStatus) {
       console.log("in");
       return; 
     }
