@@ -106,10 +106,10 @@ newErrors.noUser = "";
 console.log( "pid " + res.data.pID)
 console.log( "pid " + typeof(res.data.pID));
 
-          if ((res.data.pID === undefined || res.data.pID === null)) {
-            setisEnrolled(null);
+          if ((res.data.pID ===  0 )) {
+            setisEnrolled(0);
           }
-          if (isEnrolled == null) {
+          if (isEnrolled == 0) {
             naviagate('/GPpage');
           }
           else {
