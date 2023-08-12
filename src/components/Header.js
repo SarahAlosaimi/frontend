@@ -2,8 +2,6 @@ import Button from 'react-bootstrap/Button';
 import thiqahLogo from '../assets/thiqahLogo.png';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import './css/HeaderFooter.css'
 export default function Header(props) {
     const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('loggedIn') === 'true');
     const navigate = useNavigate(); // Initialize the navigate function
