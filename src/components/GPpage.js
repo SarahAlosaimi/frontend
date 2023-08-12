@@ -29,7 +29,7 @@ const GPpage = () => {
   useEffect(() => {
 
     // Fetch programs from the server
-    axios.get('https://backend-cyan-gamma.vercel.app/getPrograms')
+    axios.get('https://graduate-program-c0d91ea2bf20.herokuapp.com/getPrograms')
       .then(response => {
  
         setLoading(false);

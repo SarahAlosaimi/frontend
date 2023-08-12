@@ -17,7 +17,7 @@ const ProgramCards = (props) => {
 
     const handleEnroll = () => {
         // Make an API request to enroll the user in the selected program
-        axios.post('https://backend-cyan-gamma.vercel.app/enroll', {
+        axios.post('https://graduate-program-c0d91ea2bf20.herokuapp.com/enroll', {
             userId: userId,
             programId: props.program.id
         })

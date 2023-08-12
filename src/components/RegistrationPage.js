@@ -215,7 +215,7 @@ validationPerInput(name , value);
     const hashedPassword = await bcrypt.hash(formData.password, 10);
 
   
-    axios.post('https://backend-cyan-gamma.vercel.app/register', { ...formData, password: hashedPassword },
+    axios.post('https://graduate-program-c0d91ea2bf20.herokuapp.com/register', { ...formData, password: hashedPassword },
       {
         headers: {
           'Content-Type': 'multipart/form-data',
