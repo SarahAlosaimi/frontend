@@ -69,12 +69,14 @@ export default function Login() {
     var errorStatus = false; 
     if (!formData.email) {
       newErrors.email = 'Email is Required';
+      newErrors.noUser ="" ;
       errorStatus = true ; 
     }
     if (!formData.password) {
       newErrors.password = 'Password is Required';
+      newErrors.noUser ="" ;
       errorStatus = true ;
-    }
+    };
 
 
 
