@@ -104,7 +104,9 @@ newErrors.noUser = "";
           localStorage.setItem('loggedIn', 'true'); // Set the session flag
           localStorage.setItem('userid',  JSON.stringify(res.data.userid)); // Store the user ID in localStorage
 console.log( "pid " + res.data.pID)
-          if ( JSON.stringify (res.data.pID) == "") {
+console.log( "pid " + typeof(res.data.pID));
+
+          if ((res.data.pID === undefined || res.data.pID === null)) {
             setisEnrolled(null);
           }
           if (isEnrolled == null) {
