@@ -40,7 +40,7 @@ export default function Login() {
     const { name, value } = event.target;
     let newErrors = { ...errors }; // Create a copy of the errors object
 
-
+newErrors.noUser = "";
     if (name === 'email') {
       if (!value) {
         newErrors.email = 'Email is Required';
