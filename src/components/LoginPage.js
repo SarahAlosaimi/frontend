@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -10,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import thiqahLogo from '../assets/thiqahLogo.png';
 
 
-// Define the Login functional component
+// Define the Login functional component //
 export default function Login() {
 
   const [isHovered, setIsHovered] = useState(false);
