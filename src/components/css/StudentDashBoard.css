@@ -1,5 +1,6 @@
  body {
     background: linear-gradient(rgb(4,173,226 , 0.5), rgba(4, 173, 226, 0.2))!important;
+    height: 100%;
 }
 
 .border-right {
